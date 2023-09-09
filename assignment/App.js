@@ -1,37 +1,34 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-import LoginRegisterScreen from './screens/LoginRegisterScreen';
-import HomeScreen from './screens/HomeScreen';
-import ProductListingScreen from './screens/ProductListingScreen';
-import ShoppingCartScreen from './screens/ShoppingCartScreen';
-import UserProfileScreen from './screens/UserProfileScreen';
-import ProductDetailsScreen from './screens/ProductDetailsScreen';
-const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+import React, { useState, useEffect } from "react";
+import * as Font from "expo-font";
+import { Provider } from "react-redux";
 
-const HomeStack = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
-    </Stack.Navigator>
-  );
+import configureStore from "./src/store";
+import { MainContainer } from "./src/containers";
+import { StatusBar, Text } from "react-native";
+
+const store = configureStore();
+
+const customFonts = {
+  "Montserrat-Regular": require("./assets/fonts/Montserrat-Regular.ttf"),
+  "Montserrat-SemiBold": require("./assets/fonts/Montserrat-SemiBold.ttf"),
 };
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Login" component={LoginRegisterScreen} />
-        <Tab.Screen name="Home" component={HomeStack} />
-        <Tab.Screen name="Products" component={ProductListingScreen} />
-        <Tab.Screen name="Cart" component={ShoppingCartScreen} />
-        <Tab.Screen name="Profile" component={UserProfileScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-};
+export default function App() {
+  const [loaded, setLoaded] = useState(false);
 
-export default App;
+  useEffect(() => {
+    (async () => {
+      await Font.loadAsync(customFonts);
+      setLoaded(true);
+    })();
+  }, []);
+
+  return loaded ? (
+    <Provider store={store}>
+      <StatusBar style="auto" />
+      <MainContainer></MainContainer>
+    </Provider>
+  ) : (
+    <Text>Loading</Text>
+  );
+}
