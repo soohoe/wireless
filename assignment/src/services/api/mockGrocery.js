@@ -90,6 +90,101 @@ const fruits = [
       color: "#ffa7ff",
     },
   ];
+
+  const vegetables = [
+    {
+      id: 1,
+      name: "Carrot",
+      image: require("../../../assets/images/carrot.png"),
+      price: 0.99,
+      type: "VEGETABLE",
+      weight: "500g",
+      color: "#ffb1b1",
+    },
+    {
+      id: 2,
+      name: "Broccoli",
+      image: require("../../../assets/images/broccoli.png"),
+      price: 1.49,
+      type: "VEGETABLE",
+      weight: "300g",
+      color: "#a7ffa7",
+    },
+    {
+      id: 3,
+      name: "Tomato",
+      image: require("../../../assets/images/tomato.png"),
+      price: 2.29,
+      type: "VEGETABLE",
+      weight: "400g",
+      color: "#ffa7a7",
+    },
+    {
+      id: 4,
+      name: "Spinach",
+      image: require("../../../assets/images/spinach.png"),
+      price: 1.79,
+      type: "VEGETABLE",
+      weight: "200g",
+      color: "#edb9b9",
+    },
+    {
+      id: 5,
+      name: "Bell Pepper",
+      image: require("../../../assets/images/bell-pepper.png"),
+      price: 1.99,
+      type: "VEGETABLE",
+      weight: "250g",
+      color: "#ebffb1",
+    },
+    {
+      id: 6,
+      name: "Zucchini",
+      image: require("../../../assets/images/zucchini.png"),
+      price: 0.89,
+      type: "VEGETABLE",
+      weight: "300g",
+      color: "#ffffb1",
+    },
+    {
+      id: 7,
+      name: "Cucumber",
+      image: require("../../../assets/images/cucumber.png"),
+      price: 0.69,
+      type: "VEGETABLE",
+      weight: "200g",
+      color: "#ffb1b1",
+    },
+    {
+      id: 8,
+      name: "Lettuce",
+      image: require("../../../assets/images/lettuce.png"),
+      price: 1.29,
+      type: "VEGETABLE",
+      weight: "400g",
+      color: "#a7ffa7",
+    },
+    {
+      id: 9,
+      name: "Onion",
+      image: require("../../../assets/images/onion.png"),
+      price: 0.79,
+      type: "VEGETABLE",
+      weight: "500g",
+      color: "#ffa7ff",
+    },
+    {
+      id: 10,
+      name: "Potato",
+      image: require("../../../assets/images/potato.png"),
+      price: 0.69,
+      type: "VEGETABLE",
+      weight: "800g",
+      color: "#edb9b9",
+    },
+  ];
+  
+
   
   export const getGroceryItems = (searchText = "", type) => {
     return new Promise((resolve, reject) => {
