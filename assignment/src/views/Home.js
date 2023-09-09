@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
 import {
   View,
   Text,
@@ -13,6 +14,8 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useSearch } from "../hooks/";
 import { TextField, ItemCard, StoreToggle, EmptyState } from "../components";
 import { addToCart, removeFromCart } from "../store/actions/grocery";
+import {UserProfileScreen} from "./UserProfileScreen";
+import { DrawerActions } from "@react-navigation/native";
 
 export default function Home({ navigation }) {
   const dispatch = useDispatch();
@@ -28,6 +31,7 @@ export default function Home({ navigation }) {
   );
 
   const totalCartCount = Object.keys(cart).reduce((a, b) => a + cart[b], 0);
+  // const navigation = useNavigation();
 
   const handleCart = ({ type, item }) => {
     if (type === "PLUS") {
@@ -40,7 +44,12 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
-        <FontAwesome5 name="user-circle" size={24} color="#655DB0" />
+      <View>
+        <TouchableOpacity onPress={() => navigation.navigate('UserProfileScreen')}>
+          <FontAwesome5 name="user-circle" size={24} color="#655DB0" />
+        </TouchableOpacity>
+      </View>
+        
         <Text style={styles.heading}>Grocery</Text>
         <View>
           <TouchableOpacity
