@@ -16,6 +16,7 @@ import { TextField, ItemCard, StoreToggle, EmptyState } from "../components";
 import { addToCart, removeFromCart } from "../store/actions/grocery";
 import {UserProfileScreen} from "./UserProfileScreen";
 import { DrawerActions } from "@react-navigation/native";
+import DrawerNavigator from "../containers/DrawerNavigator"; // Update the path as needed
 
 export default function Home({ navigation }) {
   const dispatch = useDispatch();
@@ -53,23 +54,21 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
-        <TouchableOpacity onPress={() => navigate.openDrawer()}>
-          <Entypo name="menu" size={24} color="#655DB0" />
-        </TouchableOpacity>
+        
+      <TouchableOpacity
+        onPress={() => {
+          navigation.dispatch(DrawerActions.openDrawer());
+        }}
+      >
+        <FontAwesome5 name="bars" size={24} color="#655DB0" />
+      </TouchableOpacity>
 
         
         <Text style={styles.heading}>Grocery</Text>
         <View>
           <TouchableOpacity
-            onPress={() => navigation.push("Cart", { item: { cart } })}
-          >
-            <FontAwesome5 name="shopping-basket" size={24} color="#655DB0" />
+            onPress={() => navigation.push("Cart", { item: { cart } })}>
           </TouchableOpacity>
-          {totalCartCount ? (
-            <View style={styles.badge}>
-              <Text style={styles.cartCount}>{totalCartCount}</Text>
-            </View>
-          ) : null}
         </View>
       </View>
       <TextField
