@@ -111,6 +111,7 @@ function Cart({ navigation }) {
                 borderRadius: 16,
                 padding: 16,
               }}
+              onPress={() => navigation.navigate('OrderPlacement')}
             >
               <Text
                 style={{

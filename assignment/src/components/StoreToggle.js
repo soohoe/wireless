@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function StoreToggle({ active, onToggle }) {
+export default function StoreToggle({ active, onToggle, switchToVegetables }) {
   const handleToggle = (name) => {
     if (!onToggle) return;
 
@@ -39,7 +39,10 @@ export default function StoreToggle({ active, onToggle }) {
             borderColor: borderVeggie,
             backgroundColor: bgColorVeggie,
           }}
-          onPress={() => handleToggle("VEGGIE")}
+          onPress={() => {
+            handleToggle("VEGGIE");
+            switchToVegetables();
+          }}
         >
           <Text style={{ ...styles.text, color: textVeggie }}>Veggies</Text>
         </TouchableOpacity>

@@ -7,6 +7,7 @@ import { createSharedElementStackNavigator } from "react-navigation-shared-eleme
 import { getOnboardFlag } from "../services";
 import { Home, Cart, ItemDetail, OnBoarding} from "../views";
 import UserProfileScreen from "../views/UserProfileScreen"; // Update the path as needed
+import OrderPlacement from "../views/OrderPlacement"; // Update the path as needed
 
 import { setOnBoarded } from "../store/actions/flags";
 
@@ -53,7 +54,7 @@ export default function MainContainer() {
           options={stackOptions}
         />
         <Stack.Screen name="Cart" component={Cart} options={stackOptions} />
-       
+        <Stack.Screen name="OrderPlacement" component={OrderPlacement} />
       </Stack.Navigator>
     </NavigationContainer>
   );

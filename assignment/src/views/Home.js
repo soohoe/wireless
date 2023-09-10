@@ -22,9 +22,17 @@ export default function Home({ navigation }) {
   const { cart } = useSelector((state) => state.groceryState);
 
   const [active, setActive] = useState("FRUIT");
+  const switchToVegetables = () => {
+    setActive("VEGETABLE"); // Update the active state to "VEGETABLE"
+  };
 
   const [searchText, changeSearchText] = useState("");
-  const { data: fruits, loading } = useSearch(
+  const { data: vegetables, loading } = useSearch(
+    "getGroceryItems",
+    searchText,
+    active
+  );
+  const { data: fruits,  } = useSearch(
     "getGroceryItems",
     searchText,
     active
@@ -69,14 +77,15 @@ export default function Home({ navigation }) {
         placeholder="Search"
         onChange={changeSearchText}
       />
-      <StoreToggle active={active} onToggle={(type) => setActive(type)} />
+      
+      <StoreToggle active={active} onToggle={(type) => setActive(type)} switchToVegetables={switchToVegetables} />
       {loading ? (
         <EmptyState>
           <ActivityIndicator size="large" color="#424242" />
         </EmptyState>
-      ) : !fruits.length ? (
+      ) : active === "FRUIT" && !fruits.length ? (
         <EmptyState />
-      ) : (
+      ) : active === "FRUIT" ? (
         <ScrollView style={{ marginTop: 24 }}>
           <View
             style={{
@@ -104,7 +113,41 @@ export default function Home({ navigation }) {
             ))}
           </View>
         </ScrollView>
-      )}
+      ): active === "VEGETABLE" && !vegetables.length ? (
+        <EmptyState>
+          <ActivityIndicator size="large" color="#424242" />
+        </EmptyState>
+      ) : !vegetables.length ? (
+        <EmptyState />
+      ) : (
+        <ScrollView style={{ marginTop: 24 }}>
+          <View
+            style={{
+              margin: -8,
+              flexWrap: "wrap",
+              paddingBottom: 172,
+              flexDirection: "row",
+            }}
+          >
+            {vegetables.map((vegetables) => (
+              <View
+                key={vegetables.id}
+                style={{
+                  maxWidth: "50%",
+                  minWidth: "50%",
+                  alignSelf: "stretch",
+                }}
+              >
+                <ItemCard
+                  data={vegetables}
+                  navigation={navigation}
+                  onUpdate={(e) => handleCart(e)}
+                />
+              </View>
+              ))}
+            </View>
+          </ScrollView>
+       )}
     </View>
   );
 }

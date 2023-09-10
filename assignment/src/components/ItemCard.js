@@ -37,7 +37,7 @@ export default function ItemCard({ data, onUpdate, navigation }) {
           <View style={styles.priceWrapper}>
             <FontAwesome5
               size={18}
-              name="rupee-sign"
+              name="dollar-sign"
               color="#424242"
               style={{ paddingTop: 3 }}
             />

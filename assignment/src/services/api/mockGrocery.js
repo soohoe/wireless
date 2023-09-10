@@ -202,6 +202,22 @@ const fruits = [
         } catch (err) {
           reject(err);
         }
+        
+      }, 250);
+      setTimeout(() => {
+        try {
+          const data = vegetables
+            ? vegetables
+            : fruits.filter((d) =>
+                d.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+          resolve({
+            data: data,
+            total: data.length,
+          });
+        } catch (err) {
+          reject(err);
+        }
       }, 250);
     });
   };
