@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
 import { createSharedElementStackNavigator } from "react-navigation-shared-element";
-
+import { DrawerContentScrollView, DrawerItemList, createDrawerNavigator } from "@react-navigation/drawer";
 import { getOnboardFlag } from "../services";
 import { Home, Cart, ItemDetail, OnBoarding} from "../views";
 import UserProfileScreen from "../views/UserProfileScreen"; // Update the path as needed
 import OrderPlacement from "../views/OrderPlacement"; // Update the path as needed
 
+
 import { setOnBoarded } from "../store/actions/flags";
+import CustomDrawerContent from "../components/CustomDrawerContent";
 
 const Stack = createSharedElementStackNavigator();
 
@@ -39,23 +41,25 @@ export default function MainContainer() {
     }),
   });
 
+  
   return (
     <NavigationContainer useLegacyImplementation>
+      
       <Stack.Navigator
         headerMode="none"
         initialRouteName={onBoarded ? "Home" : "OnBoarding"}
       >
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
-        <Stack.Screen name="UserProfileScreen" component={UserProfileScreen} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
           name="Detail"
           component={ItemDetail}
           options={stackOptions}
         />
-        <Stack.Screen name="Cart" component={Cart} options={stackOptions} />
         <Stack.Screen name="OrderPlacement" component={OrderPlacement} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+

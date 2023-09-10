@@ -1,7 +1,7 @@
 import React, { useState, Component } from "react";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5,Entypo } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
+import {useNavigation} from "@react-navigation/native"; // Import useNavigation hook
 import {
   View,
   Text,
@@ -39,7 +39,7 @@ export default function Home({ navigation }) {
   );
 
   const totalCartCount = Object.keys(cart).reduce((a, b) => a + cart[b], 0);
-  // const navigation = useNavigation();
+  const navigate = useNavigation();
 
   const handleCart = ({ type, item }) => {
     if (type === "PLUS") {
@@ -49,14 +49,14 @@ export default function Home({ navigation }) {
     }
   };
 
+
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
-      <View>
-        <TouchableOpacity onPress={() => navigation.navigate('UserProfileScreen')}>
-          <FontAwesome5 name="user-circle" size={24} color="#655DB0" />
+        <TouchableOpacity onPress={() => navigate.openDrawer()}>
+          <Entypo name="menu" size={24} color="#655DB0" />
         </TouchableOpacity>
-      </View>
+
         
         <Text style={styles.heading}>Grocery</Text>
         <View>
