@@ -7,7 +7,7 @@ const fruits = [
       name: "Banana",
       image: require("../../../assets/images/banana.png"),
       color: "#ffffb1",
-      desc: "This is a banana",
+      desc: "Deliciously sweet and yellow, bananas are a great source of energy and potassium. They're perfect for snacking or adding to smoothies.",
     },
     {
       id: 2,
@@ -17,6 +17,7 @@ const fruits = [
       price: 150,
       weight: "500g",
       color: "#ffb1b1",
+      desc: "Crisp and refreshing, apples are a classic favorite. They're a healthy choice for a quick snack and come in a variety of flavors.",
     },
     {
       id: 3,
@@ -26,6 +27,7 @@ const fruits = [
       price: 400,
       weight: "500g",
       color: "#a7ffa7",
+      desc: "Creamy and rich, avocados are packed with good fats and nutrients. They're perfect for making guacamole or adding to salads.",
     },
     {
       id: 4,
@@ -35,6 +37,7 @@ const fruits = [
       price: 360,
       weight: "1000g",
       color: "#ffa7a7",
+      desc: "Bursting with juicy seeds, pomegranates are known for their antioxidant properties. They add a unique and tangy flavor to your diet.",
     },
     {
       id: 5,
@@ -44,6 +47,7 @@ const fruits = [
       price: 150,
       weight: "500g",
       color: "#a7ffa7",
+      desc: "Small but packed with vitamin C, kiwis have a tangy-sweet taste. They make a great addition to fruit salads and desserts.",
     },
     {
       id: 6,
@@ -53,6 +57,7 @@ const fruits = [
       price: 50,
       weight: "1 unit",
       color: "#edb9b9",
+      desc: "Coconuts offer a taste of the tropics with their sweet, nutty flavor. You can enjoy the refreshing coconut water and scoop out the delicious meat.",
     },
     {
       id: 7,
@@ -62,6 +67,7 @@ const fruits = [
       price: 50,
       weight: "500g",
       color: "#ebffb1",
+      desc: "Limes add zesty and tangy flavors to your dishes and beverages. They're a must-have for cocktails, marinades, and Mexican cuisine.",
     },
     {
       id: 8,
@@ -71,6 +77,7 @@ const fruits = [
       price: 60,
       weight: "1 unit",
       color: "#ffffb1",
+      desc: "Pineapples are a tropical delight with their sweet and juicy flesh. They're great for snacking, making fruit salads, or adding a tropical twist to your meals.",
     },
     {
       id: 9,
@@ -80,6 +87,7 @@ const fruits = [
       type: "FRUIT",
       weight: "1000g",
       color: "#a7ffa7",
+      desc: "These apples have a tart and crisp taste. They're excellent for making pies, applesauce, or simply enjoying as a healthy snack",
     },
     {
       id: 10,
@@ -89,6 +97,7 @@ const fruits = [
       type: "FRUIT",
       weight: "1000g",
       color: "#ffa7ff",
+      desc: "Grapes come in various colors and are sweet, juicy, and convenient to snack on. They're also great for making wine and jams.",
     },
   ];
 
@@ -101,7 +110,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "500g",
       color: "#ffb1b1",
-      desc: "This is a carrot",
+      desc: "Carrots are crunchy and slightly sweet. They're a versatile vegetable, perfect for salads, snacking, and adding to various dishes.",
     },
     {
       id: 2,
@@ -111,6 +120,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "300g",
       color: "#a7ffa7",
+      desc: "Broccoli is a nutritious green vegetable with a mild, earthy taste. It's great steamed, roasted, or added to stir-fries.",
     },
     {
       id: 3,
@@ -120,6 +130,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "400g",
       color: "#ffa7a7",
+      desc: "Tomatoes are juicy and versatile. They add flavor to sandwiches, salads, and pasta dishes. They're also the base for many sauces.",
     },
     {
       id: 4,
@@ -129,6 +140,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "200g",
       color: "#edb9b9",
+      desc: "Spinach is a dark leafy green with a mild taste. It's perfect for salads, smoothies, and as a nutritious addition to cooked dishes.",
     },
     {
       id: 5,
@@ -138,6 +150,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "250g",
       color: "#ebffb1",
+      desc: "Bell peppers come in vibrant colors and have a sweet and crunchy texture. They're great for stuffing, grilling, or adding to fajitas.",
     },
     {
       id: 6,
@@ -147,6 +160,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "300g",
       color: "#ffffb1",
+      desc: "Zucchini is a versatile summer squash with a mild flavor. You can use it in stir-fries, sautés, or even make zucchini noodles.",
     },
     {
       id: 7,
@@ -156,6 +170,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "200g",
       color: "#ffb1b1",
+      desc: "Cucumbers are crisp and refreshing. They're perfect for salads, sandwiches, or simply sliced for a healthy snack.",
     },
     {
       id: 8,
@@ -165,6 +180,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "400g",
       color: "#a7ffa7",
+      desc: "Lettuce is a staple in salads and sandwiches. It has a mild, leafy taste and adds a refreshing crunch to your dishes.",
     },
     {
       id: 9,
@@ -174,6 +190,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "500g",
       color: "#ffa7ff",
+      desc: "Onions are aromatic and add depth of flavor to many recipes. They're essential for soups, stews, and various savory dishes.",
     },
     {
       id: 10,
@@ -183,6 +200,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "800g",
       color: "#edb9b9",
+      desc: "Potatoes are a versatile staple, suitable for mashing, frying, baking, or boiling. They're a comfort food with endless culinary possibilities.",
     },
   ];
   
