@@ -47,7 +47,7 @@ export default function CartCard({ navigation, data, cart, onUpdate }) {
       <View style={styles.priceBox}>
         <FontAwesome5
           style={{ paddingTop: 2, paddingRight: 2 }}
-          name="rupee-sign"
+          name="dollar-sign"
           color="#424242"
           size={12}
         />

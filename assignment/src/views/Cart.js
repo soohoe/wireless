@@ -91,7 +91,7 @@ function Cart({ navigation }) {
                 <FontAwesome5
                   size={20}
                   color="#424242"
-                  name="rupee-sign"
+                  name="dollar-sign"
                   style={{ paddingTop: 7, paddingRight: 2 }}
                 />
                 <Text

@@ -30,7 +30,7 @@ function ItemDetail({
           <FontAwesome5
             size={18}
             color="#424242"
-            name="rupee-sign"
+            name="dollar-sign"
             style={{ paddingTop: 4, paddingRight: 2 }}
           />
           <Text style={styles.price}>{price}</Text>
