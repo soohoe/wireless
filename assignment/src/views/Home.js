@@ -16,7 +16,7 @@ import { TextField, ItemCard, StoreToggle, EmptyState } from "../components";
 import { addToCart, removeFromCart } from "../store/actions/grocery";
 import {UserProfileScreen} from "./UserProfileScreen";
 import { DrawerActions } from "@react-navigation/native";
-import DrawerNavigator from "../containers/DrawerNavigator"; // Update the path as needed
+
 
 export default function Home({ navigation }) {
   const dispatch = useDispatch();

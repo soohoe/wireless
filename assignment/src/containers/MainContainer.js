@@ -93,8 +93,8 @@ export default function MainContainer() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="reee" component={Home} options={{headerShown:false}} />
+    <Stack.Navigator initialRouteName="OnBoarding">
+      <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
       <Stack.Screen
           name="Detail"
           component={ItemDetail}
@@ -104,6 +104,7 @@ function StackNavigator() {
       <Stack.Screen name="OnBoarding" component={OnBoarding} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="Cart" component={Cart} />
     </Stack.Navigator>
   );
 }
