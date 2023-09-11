@@ -35,6 +35,18 @@ function DrawerNavigator({ onBoarded, userToken }) {
   );
 }
 
+const stackOptions = () => ({
+  gestureEnabled: false,
+  transitionSpec: {
+    open: { animation: "timing", config: { duration: 400 } },
+    close: { animation: "timing", config: { duration: 400 } },
+  },
+  cardStyleInterpolator: ({ current: { progress } }) => ({
+    cardStyle: {
+      opacity: progress,
+    },
+  }),
+});
 export default function MainContainer() {
   const dispatch = useDispatch();
 
@@ -66,18 +78,6 @@ export default function MainContainer() {
     })();
   }, [dispatch]);
 
-  const stackOptions = () => ({
-    gestureEnabled: false,
-    transitionSpec: {
-      open: { animation: "timing", config: { duration: 400 } },
-      close: { animation: "timing", config: { duration: 400 } },
-    },
-    cardStyleInterpolator: ({ current: { progress } }) => ({
-      cardStyle: {
-        opacity: progress,
-      },
-    }),
-  });
 
   if (isLoading) {
     // Loading screen
@@ -95,7 +95,11 @@ function StackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="reee" component={Home} options={{headerShown:false}} />
-      <Stack.Screen name="ItemDetail" component={ItemDetail} />
+      <Stack.Screen
+          name="Detail"
+          component={ItemDetail}
+          options={stackOptions,{headerShown:false}}
+        />
       <Stack.Screen name="OrderPlacement" component={OrderPlacement} />
       <Stack.Screen name="OnBoarding" component={OnBoarding} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />

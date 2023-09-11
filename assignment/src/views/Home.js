@@ -67,8 +67,15 @@ export default function Home({ navigation }) {
         <Text style={styles.heading}>Grocery</Text>
         <View>
           <TouchableOpacity
-            onPress={() => navigation.push("Cart", { item: { cart } })}>
+            onPress={() => navigation.push("Cart", { item: { cart } })}
+          >
+            <FontAwesome5 name="shopping-basket" size={24} color="#655DB0" />
           </TouchableOpacity>
+          {totalCartCount ? (
+            <View style={styles.badge}>
+              <Text style={styles.cartCount}>{totalCartCount}</Text>
+            </View>
+          ) : null}
         </View>
       </View>
       <TextField

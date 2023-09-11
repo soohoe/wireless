@@ -7,6 +7,7 @@ const fruits = [
       name: "Banana",
       image: require("../../../assets/images/banana.png"),
       color: "#ffffb1",
+      desc: "This is a banana",
     },
     {
       id: 2,
@@ -100,6 +101,7 @@ const fruits = [
       type: "VEGETABLE",
       weight: "500g",
       color: "#ffb1b1",
+      desc: "This is a carrot",
     },
     {
       id: 2,

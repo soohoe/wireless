@@ -10,7 +10,7 @@ function ItemDetail({
     params: { item },
   },
 }) {
-  const { id, name, price, image, weight } = item;
+  const { id, name, price, image, weight, desc} = item;
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -38,12 +38,7 @@ function ItemDetail({
 
         <Text style={styles.weight}>{weight}</Text>
         <Text style={styles.about}>About this product</Text>
-        <Text style={styles.desc}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eum
-          numquam maiores tempore laudantium dolorum quidem optio iste nesciunt
-          id et alias aspernatur deleniti inventore, nemo totam, aliquid eius
-          dolor.
-        </Text>
+        <Text style={styles.desc}>{desc}</Text>
       </View>
     </View>
   );
